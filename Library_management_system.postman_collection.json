@@ -1,0 +1,688 @@
+{
+	"info": {
+		"_postman_id": "7e6b255f-ce3a-4d75-b44f-e56bf2f885a5",
+		"name": "Library_management_system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16962925"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "addUser",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "admin",
+										"value": "{{adminAuthorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Harish\",\r\n    \"email\":\"harish.m@codetru.com\",\r\n    \"phonenumber\":9650085521,\r\n    \"joining_date\":\"03-05-2023\",\r\n    \"profile\":\"full stack developer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{web_portal}}://{{host}}:{{port}}/admin/addUser",
+									"protocol": "{{web_portal}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"admin",
+										"addUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "dropdown",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "admin",
+										"value": "{{adminAuthorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{web_portal}}://{{host}}:{{port}}/admin/dropdown",
+									"protocol": "{{web_portal}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"admin",
+										"dropdown"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "books",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "admin",
+										"value": "{{adminAuthorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "abc",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "mahesh",
+											"type": "text"
+										},
+										{
+											"key": "number_of_books",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "cost_of_each_book",
+											"value": "150",
+											"type": "text"
+										},
+										{
+											"key": "rack",
+											"value": "thriller",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/srira/Desktop/codetru.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{web_portal}}://{{host}}:{{port}}/admin/store",
+									"protocol": "{{web_portal}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"admin",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bookStock",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "admin",
+										"value": "{{adminAuthorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book_id\":\"b-920542\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{web_portal}}://{{host}}:{{port}}/admin/bookStock",
+									"protocol": "{{web_portal}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"admin",
+										"bookStock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "admin",
+										"value": "{{adminAuthorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book_id\": \"b-920542\",\r\n    \"number_of_books\": \"120\",\r\n    \"reason\": \"I want to add extra 1 book as more number of customers are increasing\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{web_portal}}://{{host}}:{{port}}/admin/update",
+									"protocol": "{{web_portal}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"admin",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "fine rates",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "admin",
+										"value": "{{adminAuthorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from_day\":100,\r\n    \"to_day\":110,\r\n    \"cost\":110\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{web_portal}}://{{host}}:{{port}}/admin/fineCalculate",
+									"protocol": "{{web_portal}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"admin",
+										"fineCalculate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "issue_book",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "admin",
+										"value": "{{adminAuthorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": \"7\",\r\n    \"book_id\": \"b-534942\",\r\n    \"issue_date\": \"22-06-2023\",\r\n    \"expiry_date\": \"25-06-2023\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{web_portal}}://{{host}}:{{port}}/admin/userBook",
+									"protocol": "{{web_portal}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"admin",
+										"userBook"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bookSubmit",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "admin",
+										"value": "{{adminAuthorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"booking_id\": \"903183\",\r\n    \"return_date\": \"12-06-2023\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{web_portal}}://{{host}}:{{port}}/admin/bookSubmit",
+									"protocol": "{{web_portal}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"admin",
+										"bookSubmit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "admin",
+										"value": "{{adminAuthorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{web_portal}}://{{host}}:{{port}}/admin/bookHistoryTrack",
+									"protocol": "{{web_portal}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"admin",
+										"bookHistoryTrack"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Malladi Saharsh Reddy\",\r\n    \"email\":\"saharsh.m@codetru.com\",\r\n    \"password\":\"SaharshReddy@123\",\r\n    \"phonenumber\":9655485523\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web_portal}}://{{host}}:{{port}}/admin/registration",
+							"protocol": "{{web_portal}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"admin",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"saharsh.m@codetru.com\",\r\n    \"password\": \"SaharshReddy@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web_portal}}://{{host}}:{{port}}/admin/login",
+							"protocol": "{{web_portal}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminId\":8,\r\n    \"name\":\"msr\",\r\n    \"email\": \"msr.m@codetru.com\",\r\n    \"phonenumber\":\"0000012345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web_portal}}://{{host}}:{{port}}/admin/profile",
+							"protocol": "{{web_portal}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"admin",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user",
+								"value": "{{userAuthorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{web_portal}}://{{host}}:{{port}}/user/search?search=b-976632",
+							"protocol": "{{web_portal}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"user",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "b-976632"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookHistory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user",
+								"value": "{{userAuthorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web_portal}}://{{host}}:{{port}}/user/bookHistory",
+							"protocol": "{{web_portal}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"user",
+								"bookHistory"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "55daa218-e31d-48ef-9f12-7116f70ed9b0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fine",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user",
+								"value": "{{userAuthorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web_portal}}://{{host}}:{{port}}/user/userFine",
+							"protocol": "{{web_portal}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"user",
+								"userFine"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "55daa218-e31d-48ef-9f12-7116f70ed9b0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"rakesh\",\r\n    \"email\":\"rakesh.m@codetru.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web_portal}}://{{host}}:{{port}}/user/login",
+							"protocol": "{{web_portal}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "55daa218-e31d-48ef-9f12-7116f70ed9b0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "web_portal",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "3000",
+			"type": "string"
+		},
+		{
+			"key": "adminAuthorization",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9kYXRhIjo4LCJlbWFpbF9kYXRhIjoic2FoYXJzaC5tQGNvZGV0cnUuY29tIiwiaWF0IjoxNjgzMDczNDgwLCJleHAiOjE2ODMxNTk4ODB9.RDw0SBbUkgR_ZfJQz3QIuvU_zCGuBQTbMuGrzR1j66U",
+			"type": "string"
+		},
+		{
+			"key": "userAuthorization",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWxfaWQiOiJyYWtlc2gubUBjb2RldHJ1LmNvbSIsImlhdCI6MTY4MzA3NTIxNywiZXhwIjoxNjgzMTYxNjE3fQ.zd8EyNgPP_7s274wWb0KyYqzRrD714HdPOvy4INgYc8",
+			"type": "string"
+		}
+	]
+}
